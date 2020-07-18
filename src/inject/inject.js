@@ -2,11 +2,11 @@ chrome.extension.sendMessage({}, response => {
 	const readyStateCheckInterval = setInterval(() => {
 		if (document.readyState === "complete") {
 			clearInterval(readyStateCheckInterval)
+			console.log("Hello from inject.js")
 
-			// ----------------------------------------------------------
-			// This part of the script triggers when page is done loading
-			console.log("Hello. This message was sent from scripts/inject.js")
-			// ----------------------------------------------------------
+			const cartButton = document.querySelector("#add-to-cart-button")
+
+			cartButton.style.pointerEvents = "none"
 		}
 	}, 10)
 })

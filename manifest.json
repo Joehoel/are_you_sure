@@ -10,10 +10,10 @@
 	},
 	"default_locale": "en",
 	"options_page": "src/options/index.html",
-	"permissions": ["contentSettings"],
+	"permissions": ["tabs", "activeTab", "fontSettings", "storage"],
 	"content_scripts": [
 		{
-			"matches": ["https://*/*"],
+			"matches": ["<all_urls>"],
 			"js": ["src/inject/inject.js"]
 		}
 	]
